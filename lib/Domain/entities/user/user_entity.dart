@@ -1,17 +1,38 @@
+import 'dart:io';
+
 import 'package:equatable/equatable.dart';
 
-class User extends Equatable {
-  final int id;
-  final int userId;
-  final User matchedUser;
-  final List<Chat>? chat;
+class UserEntity extends Equatable{
+  final String? uid;
+  final String? username;
+  final String? name;
+  final String? birthdate;
 
-  const UserMatch({
-    required this.id,
-    required this.userId,
-    required this.matchedUser,
-    required this.chat,
+
+  //will not going to be stored in DB
+  final File? imageFile;
+  final String? password;
+  final String? otherUid;
+
+  UserEntity({
+    this.imageFile,
+    this.uid,
+    this.username,
+    this.name,
+    this.birthdate,
+    this.password,
+    this.otherUid
   });
 
   @override
-  List<Object?> get props => [id, userId, matchedUser];
+  // TODO: implement props
+  List<Object?> get props => [
+    uid,
+    username,
+    name,
+    birthdate,
+    password,
+    otherUid,
+    imageFile
+  ];
+}

@@ -22,4 +22,7 @@ class RepositoryImpl implements Repository{
 
   @override
   Future<String> getCurrentUid() async => remoteDataSource.getCurrentUid();
+
+  @override
+  Future<void> matchAndRegisterUser(UserEntity currentUser, List<UserEntity> potentialMatches, List chat);
 }

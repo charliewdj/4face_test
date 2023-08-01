@@ -10,4 +10,7 @@ abstract class Repository {
   Future<void> signInUser(UserEntity user);
   Future<void> signUpUser(UserEntity user);
   Future<void> signOut();
+
+
+  Future<void> matchAndRegisterUser(UserEntity currentUser, List<UserEntity> potentialMatches, List<Chat> chat);
 }
